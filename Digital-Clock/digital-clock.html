@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="digital-clock.css">
+    <!-- <script src="digital-clock.js"></script> -->
+</head>
+
+<body>
+    <!-- <div id="digitalclock"></div>
+    <p onclick="showTime()">1</p> -->
+
+    <div class="box">
+        <div class="container">
+            <div class="clock">
+
+                <span id="hr">00</span>
+                <span>:</span>
+                <span id="min">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        let hr = document.getElementById('hr')
+        let min = document.getElementById('min')
+        let sec = document.getElementById('sec')
+
+       
+
+        setInterval(() => {
+            let date = new Date();
+
+             
+            hr.innerHTML = (date.getHours()<10?'0':"")+date.getHours();
+            min.innerHTML = (date.getMinutes()<10?"0":"")+date.getMinutes();
+            sec.innerHTML = (date.getSeconds()<10?"0":"")+date.getSeconds();
+
+            if(hr==0){
+            hr.innerHTML=12;
+           }
+            if(hr<12){
+                hr.innerHTML=hr-12;
+                session=PM
+            }
+        }, 1000)
+    </script>
+</body>
+
+</html>
+<div class=""></div>
